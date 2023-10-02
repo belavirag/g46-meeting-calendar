@@ -1,8 +1,10 @@
 package se.lexicon.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Meeting {
+    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private int id;
     private String title, description;
     private LocalDateTime endTime, startTime;
@@ -47,12 +49,6 @@ public class Meeting {
 
     @Override
     public String toString() {
-        return "Meeting{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", endTime=" + endTime +
-                ", startTime=" + startTime +
-                '}';
+        return "Meeting from " + this.getStartTime().format(DATE_TIME_FORMATTER) + " to " + this.getEndTime().format(DATE_TIME_FORMATTER) + " title: " + this.getTitle() + ", desc = " + this.getDescription();
     }
 }

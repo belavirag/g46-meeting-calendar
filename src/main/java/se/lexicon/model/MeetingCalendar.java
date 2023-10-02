@@ -1,6 +1,5 @@
 package se.lexicon.model;
 
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,10 +47,7 @@ public class MeetingCalendar {
         System.out.println("Meeting calendar id= " + id + ", title= " + title + ", username= " + username);
         System.out.println("Meeting list:");
 
-        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        this.meetings.forEach(meeting -> {
-            System.out.println("Meeting from " + meeting.getStartTime().format(formatter) + " to " + meeting.getEndTime().format(formatter) + " title: " + meeting.getTitle() + ", desc = " + meeting.getDescription());
-        });
+        this.meetings.forEach(System.out::println);
     }
 
     @Override
