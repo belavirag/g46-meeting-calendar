@@ -1,11 +1,23 @@
 package se.lexicon.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MeetingCalendar {
     private int id;
     private String title, username;
     private List<Meeting> meetings;
+
+    public MeetingCalendar(int id, String title, String username, List<Meeting> meetings) {
+        this.id = id;
+        this.title = title;
+        this.username = username;
+        this.meetings = meetings;
+    }
+
+    public MeetingCalendar(int id, String title, String username) {
+        this(id, title, username, new ArrayList<>());
+    }
 
     public int getId() {
         return id;

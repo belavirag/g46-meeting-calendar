@@ -8,6 +8,15 @@ public class Meeting {
     private LocalDateTime endTime, startTime;
     private MeetingCalendar calendar;
 
+    public Meeting(int id, String title, String description, LocalDateTime endTime, LocalDateTime startTime, MeetingCalendar calendar) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.endTime = endTime;
+        this.startTime = startTime;
+        this.calendar = calendar;
+    }
+
     public int getId() {
         return id;
     }
