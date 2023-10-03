@@ -81,7 +81,7 @@ public class MeetingCalendarDaoImpl implements MeetingCalendarDao {
                     String usernameFromDB = resultSet.getString("USERNAME");
                     int id = resultSet.getInt("ID");
 
-                    result.add(new MeetingCalendar(id, username, title));
+                    result.add(new MeetingCalendar(id, usernameFromDB, title));
                 }
             }
         } catch (SQLException e) {
